@@ -1,62 +1,78 @@
 #include <stdio.h>
 
 int main() {
-// Carta 1
-char Estado1[3];
-char Codigo1[5];
-char NomeCidade1[50];
-int Populacao1;
-float Area1;
-float PIB1;
-int PontosTuristicos1;
-float Densidade1; // Novas adições nivel medio
-float PIBCapita1;
-float InversoDensidade1; // Nivel Mestre
-float SuperPoder1; // Nível Mestre
+    // Carta 1
+    char Estado1[3];
+    char Codigo1[5];
+    char NomeCidade1[50];
+    unsigned long int Populacao1;
+    float Area1;
+    float PIB1;
+    int PontosTuristicos1;
+    float Densidade1;
+    float PIBCapita1;
+    float InversoDensidade1;
+    float SuperPoder1;
 
-// Carta 2
+    // Carta 2
     char Estado2[3];
     char Codigo2[5];
     char NomeCidade2[50];
-    int Populacao2;
+    unsigned long int Populacao2;
     float Area2;
     float PIB2;
     int PontosTuristicos2;
-    float Densidade2; 
+    float Densidade2;
     float PIBCapita2;
-    float InversoDensidade2; 
-    float SuperPoder2; 
+    float InversoDensidade2;
+    float SuperPoder2;
 
     // Preparação Carta 1
-printf("Digite aqui o estado da carta 1: ");
-scanf("%s", Estado1);
+    printf("Digite aqui o estado da carta 1: ");
+    scanf("%s", Estado1);
 
-printf("Digite aqui o codigo da carta 1: ");
-scanf("%s", Codigo1);
+    printf("Digite aqui o codigo da carta 1: ");
+    scanf("%s", Codigo1);
 
-printf("Digite o nome da cidade da carta 1: ");
-scanf(" %[^\n]", NomeCidade1);
+    printf("Digite o nome da cidade da carta 1: ");
+    scanf(" %[^\n]", NomeCidade1);
 
-printf("Digite a populacao da carta 1: ");
-scanf("%d", &Populacao1);
+    printf("Digite a populacao da carta 1: ");
+    scanf("%lu", &Populacao1);
 
-printf("Digite a area da carta 1: ");
-scanf("%f", &Area1);
+    printf("Digite a area da carta 1: ");
+    scanf("%f", &Area1);
 
-printf("Digite aqui o PIB da carta 1: ");
-scanf("%f", &PIB1);
+    printf("Digite aqui o PIB da carta 1: ");
+    scanf("%f", &PIB1);
 
-printf("Digite o numero de pontos turisticos da carta 1: ");
-scanf("%d", &PontosTuristicos1);
+    printf("Digite o numero de pontos turisticos da carta 1: ");
+    scanf("%d", &PontosTuristicos1);
 
-  
-    Densidade1 = (float)Populacao1 / Area1;
-    PIBCapita1 = (PIB1 * 1000000000.0f) / Populacao1;
-    InversoDensidade1 = 1 / Densidade1;
+    // Cálculos com verificações para evitar divisão por zero
+    if (Area1 > 0.0f) {
+        Densidade1 = (float)Populacao1 / Area1;
+    } else {
+        Densidade1 = 0.0f;
+    }
+
+    if (Populacao1 > 0) {
+        PIBCapita1 = (PIB1 * 1000000000.0f) / Populacao1;
+    } else {
+        PIBCapita1 = 0.0f;
+    }
+
+    if (Densidade1 > 0.0f) {
+        InversoDensidade1 = 1.0f / Densidade1;
+    } else {
+        InversoDensidade1 = 0.0f;
+    }
+
     SuperPoder1 = Populacao1 + Area1 + PIB1 + PontosTuristicos1 + PIBCapita1 + InversoDensidade1;
-    
-    getchar(); // Esse comando é para limpar o espaço do buffer
-            // Preparação Carta 2
+
+    getchar(); // Limpar buffer
+
+    // Preparação Carta 2
     printf("\nDigite aqui o estado da Carta 2: ");
     scanf("%s", Estado2);
 
@@ -67,7 +83,7 @@ scanf("%d", &PontosTuristicos1);
     scanf(" %[^\n]", NomeCidade2);
 
     printf("Digite a população da Carta 2: ");
-    scanf("%d", &Populacao2);
+    scanf("%lu", &Populacao2);
 
     printf("Digite a área da Carta 2: ");
     scanf("%f", &Area2);
@@ -78,10 +94,25 @@ scanf("%d", &PontosTuristicos1);
     printf("Digite o número de pontos turísticos da Carta 2: ");
     scanf("%d", &PontosTuristicos2);
 
-     // Adição Nivel Medio. Calculos.
-    Densidade2 = (float)Populacao2 / Area2;
-    PIBCapita2 = (PIB2 * 1000000000.0f) / Populacao2; 
-    InversoDensidade2 = 1 / Densidade2;
+    // Copiei e coloquei conforme a IA instruiu, mas o programa ja rodava 100% sem essa sequencia de comandos, achei super confuso! 
+    if (Area2 > 0.0f) {
+        Densidade2 = (float)Populacao2 / Area2;
+    } else {
+        Densidade2 = 0.0f;
+    }
+
+    if (Populacao2 > 0) {
+        PIBCapita2 = (PIB2 * 1000000000.0f) / Populacao2;
+    } else {
+        PIBCapita2 = 0.0f;
+    }
+
+    if (Densidade2 > 0.0f) {
+        InversoDensidade2 = 1.0f / Densidade2;
+    } else {
+        InversoDensidade2 = 0.0f;
+    }
+
     SuperPoder2 = Populacao2 + Area2 + PIB2 + PontosTuristicos2 + PIBCapita2 + InversoDensidade2;
 
     // Comparando tudo antes de imprimir
@@ -99,7 +130,7 @@ scanf("%d", &PontosTuristicos1);
     printf("Estado: %s\n", Estado1);
     printf("Codigo: %s\n", Codigo1);
     printf("Nome da Cidade: %s\n", NomeCidade1); 
-    printf("População: %d\n", Populacao1);
+    printf("População: %lu\n", Populacao1);
     printf("Area: %.2f km²\n", Area1);
     printf("PIB: %.2f bilhões de reais\n", PIB1);
     printf("Pontos turisticos: %d\n", PontosTuristicos1); 
@@ -112,7 +143,7 @@ scanf("%d", &PontosTuristicos1);
     printf("Estado: %s\n", Estado2);
     printf("Código: %s\n", Codigo2);
     printf("Nome da Cidade: %s\n", NomeCidade2);
-    printf("População: %d\n", Populacao2);
+    printf("População: %lu\n", Populacao2);
     printf("Área: %.2f km²\n", Area2);
     printf("PIB: %.2f bilhões de reais\n", PIB2);
     printf("Pontos turísticos: %d\n", PontosTuristicos2);
@@ -129,5 +160,4 @@ scanf("%d", &PontosTuristicos1);
     printf("Super Poder: Carta %d venceu (%d)\n", superVence ? 1 : 2, superVence);
 
     return 0;
-    
 }
