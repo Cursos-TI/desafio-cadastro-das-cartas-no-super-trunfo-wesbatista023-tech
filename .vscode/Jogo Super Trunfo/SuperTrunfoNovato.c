@@ -47,9 +47,10 @@ scanf("%d", &PontosTuristicos1);
 
 // Adição nivel médio, calcular Densidade e PiB
 
-    Densidade1 = Populacao1 / Area1;
-    PIBCapita1 = (PIB1 * 1000000000) / Populacao1;
-
+    Densidade1 = (float)Populacao1 / Area1;
+    PIBCapita1 = (PIB1 * 1000000000.0f) / Populacao1;
+    
+    getchar(); // Esse comando é para limpar o espaço do buffer
 // Preparação Carta 2
     printf("\nDigite aqui o estado da Carta 2: ");
     scanf("%s", Estado2);
@@ -73,8 +74,8 @@ scanf("%d", &PontosTuristicos1);
     scanf("%d", &PontosTuristicos2);
 
      // Adição Nivel Medio. Calculos.
-    Densidade2 = Populacao2 / Area2;
-    PIBCapita2 = (PIB2 * 1000000000) / Populacao2; 
+    Densidade2 = (float)Populacao2 / Area2;
+    PIBCapita2 = (PIB2 * 1000000000.0f) / Populacao2; 
 
     // Carta 1 - Impressão
     printf("\nCarta Super Trunfo 1\n"); 
