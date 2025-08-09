@@ -136,6 +136,7 @@ int main() {
     printf("Pontos turisticos: %d\n", PontosTuristicos1); 
     printf("Densidade Populacional: %.2f hab/km²\n", Densidade1);
     printf("PIB per Capita: %.2f reais\n", PIBCapita1); 
+    printf("Super Poder: %.2f\n", SuperPoder1);
 
     // Carta 2 - Impressão
     printf("\nCarta Super Trunfo 2\n");
@@ -149,6 +150,7 @@ int main() {
     printf("Pontos turísticos: %d\n", PontosTuristicos2);
     printf("Densidade Populacional: %.2f hab/km²\n", Densidade2);
     printf("PIB per Capita: %.2f reais\n", PIBCapita2);
+    printf("Super Poder: %.2f\n", SuperPoder2);
 
     printf("\nComparacao de Cartas:\n");
     printf("Populacao: Carta %d venceu (%d)\n", popVence ? 1 : 2, popVence);
