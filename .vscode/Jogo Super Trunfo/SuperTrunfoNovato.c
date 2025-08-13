@@ -246,5 +246,6 @@ int main() {
             printf("Opcao invalida!\n");
     }
 // Retirei a opção de comparação anterior, retirei tmb a ultima atualização pois essa ficou mais completa conforme o nivel aventureiro da Logica de Supertrunfo.
+// Correção do nivel aventureiro. 
  
 }
